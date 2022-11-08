@@ -13,7 +13,6 @@ public class SalesystemApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("API Spring Executando...");
 	}
 
 }
