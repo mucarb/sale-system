@@ -3,14 +3,22 @@ package com.murilo.salesystem.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
 import com.murilo.salesystem.entities.enums.UserType;
 
+@Entity
 public class Company extends User {
 
 	private static final long serialVersionUID = 1L;
+	@Column(unique = true)
 	private String cnpj;
 	private Double tax;
 	private Double balance;
+	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 
 	public Company() {

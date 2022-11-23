@@ -2,11 +2,16 @@ package com.murilo.salesystem.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 import com.murilo.salesystem.entities.enums.UserType;
 
+@Entity
 public class Client extends User {
 
 	private static final long serialVersionUID = 1L;
+	@Column(unique = true)
 	private String cpf;
 	private LocalDate birthDate;
 
